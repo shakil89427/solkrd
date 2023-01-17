@@ -14,3 +14,15 @@
     @apply h-[calc(100%-48px)] sm:h-[calc(100%-56px)] md:h-[calc(100%-64px)] lg:h-[calc(100%-72px)] xl:h-[calc(100%-80px)];
   }
 }
+
+@layer utilities {
+  .scroller {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scroller::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
