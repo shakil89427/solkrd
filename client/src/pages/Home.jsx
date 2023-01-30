@@ -1,3 +1,5 @@
+import useFirebase from "../hooks/stores/useFirebase";
+
 const Home = () => {
   return (
     <div className="h-screen flex items-center justify-center text-xl font-medium text-center">
