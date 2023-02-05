@@ -8,7 +8,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
-import mainlogo from "../assets/images/mainlogo.png";
+import mainlogo from "../assets/images/logo2.png";
 
 const User = () => {
   const { userId } = useParams();

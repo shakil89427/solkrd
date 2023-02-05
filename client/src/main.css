@@ -3,19 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  #root {
-    @apply fixed inset-0 overflow-y-auto;
-  }
-}
-
 @layer utilities {
-  .scroller {
+  .hidescroll {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  .scroller::-webkit-scrollbar {
+  .hidescroll::-webkit-scrollbar {
     width: 0;
   }
 }
