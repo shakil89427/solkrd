@@ -23,8 +23,8 @@ const Products = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <div className="select-none flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl gap-3 text-gray-500">
+    <div className="container">
+      <div className="mt-5 select-none flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl gap-3 text-gray-500">
         <IoMdArrowDropleft
           onClick={() => swiper?.slidePrev()}
           className="cursor-pointer text-xl sm:text-2xl md:text-3xl lg:text-4xl"
@@ -63,7 +63,7 @@ const Products = () => {
               Front/Back
             </button>
             <img
-              src={product?.customizeImageUrl}
+              src={product?.blob[0]?.url}
               alt=""
               className="mt-3 rounded-lg aspect-[16/9] w-full"
             />

@@ -3,10 +3,10 @@ import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import HashLoader from "react-spinners/HashLoader";
-import useGetSliders from "../../hooks/queries/useGetSliders";
+import useGetBanners from "../../hooks/queries/useGetBanners";
 
 const TopBanner = () => {
-  const { data, isInitialLoading, isError } = useGetSliders();
+  const { data, isInitialLoading, isError } = useGetBanners();
 
   if (isInitialLoading) {
     return (
@@ -22,7 +22,7 @@ const TopBanner = () => {
 
   return (
     <div className="container">
-      <Swiper speed={600} autoplay={{ delay: 3000 }} modules={[Autoplay]} loop className="w-full">
+      <Swiper speed={600} autoplay={{ delay: 3000 }} modules={[Autoplay]} loop>
         {data?.map((item) => (
           <SwiperSlide key={item?.id} className="aspect-[4/1.5] w-full">
             <img src={item?.imageUrl} alt="" className="w-full h-full" />

@@ -9,8 +9,8 @@ import "swiper/css";
 const CustomarReview = () => {
   const [swiper, setSwiper] = useState({});
   return (
-    <div className="container mt-5 select-none">
-      <div className=" bg-amber-900 pt-8 pb-14">
+    <div className="container">
+      <div className="mt-5 select-none bg-amber-900 pt-8 pb-14">
         <p className="font-semibold text-white text-center text-lg sm:text-xl md:text-2xl lg:text-3xl">
           Customer Review
         </p>

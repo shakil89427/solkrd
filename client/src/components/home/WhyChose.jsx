@@ -10,8 +10,8 @@ const items = [
 
 const WhyChose = () => {
   return (
-    <div className="mt-5 container">
-      <div className="bg-gray-100 pt-8 pb-14">
+    <div className="container ">
+      <div className="mt-5 bg-gray-100 pt-8 pb-14">
         <p className="text-center font-semibold text-blue-800 text-lg sm:text-xl md:text-2xl lg:text-3xl">
           Why choose SolKRD?
         </p>

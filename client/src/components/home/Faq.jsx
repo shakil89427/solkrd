@@ -10,8 +10,8 @@ const Faq = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className="container mt-5">
-      <div className="pt-8 pb-14">
+    <div className="container">
+      <div className="pt-8 pb-14 mt-5">
         <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-800 text-center">
           FAQ's
         </p>

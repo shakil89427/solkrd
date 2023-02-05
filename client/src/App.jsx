@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import MainWrapper from "./components/MainWrapper";
 import Home from "./pages/Home";
 import User from "./pages/User";
 
@@ -10,11 +9,9 @@ const App = () => {
       <Route
         path="/"
         element={
-          <>
-            <Header />
+          <MainWrapper>
             <Home />
-            <Footer />
-          </>
+          </MainWrapper>
         }
       />
       <Route path="/user/:userId" element={<User />} />

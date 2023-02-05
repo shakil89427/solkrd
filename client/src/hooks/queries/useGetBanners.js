@@ -2,10 +2,10 @@ import request from "../../helpers/request";
 import { useQuery } from "@tanstack/react-query";
 
 const queryFn = () => {
-  return request({ url: "/slider" });
+  return request({ url: "/banner" });
 };
 
-const useGetUser = () => {
+const useGetBanners = () => {
   return useQuery({ queryKey: ["slider"], queryFn });
 };
-export default useGetUser;
+export default useGetBanners;
