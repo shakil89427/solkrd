@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const client = axios.create({ baseURL: "http://34.93.31.62/api" });
+const client = axios.create({ baseURL: `${window.location.origin}/api` });
+console.log(window.location);
 
 const request = ({ ...options }) => {
   client.defaults.headers.common.Authorization = localStorage.getItem("accessToken");

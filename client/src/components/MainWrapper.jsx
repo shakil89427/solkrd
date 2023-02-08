@@ -4,8 +4,10 @@ import Header from "./Header";
 const MainWrapper = ({ children }) => {
   return (
     <>
-      <Header />
-      {children}
+      <div className="min-h-screen">
+        <Header />
+        {children}
+      </div>
       <Footer />
     </>
   );

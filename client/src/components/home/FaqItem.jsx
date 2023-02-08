@@ -8,7 +8,7 @@ const FaqItem = ({ selected, setSelected, item, index }) => {
     <div
       onClick={() => setSelected(selected === index ? false : index)}
       key={index}
-      className="p-5 cursor-pointer bg-gray-100 select-none rounded-md"
+      className="p-5 cursor-pointer bg-gray-100 select-none rounded-lg"
     >
       <div className="flex items-center justify-between">
         <p className="select-none text-base">{item.title}</p>

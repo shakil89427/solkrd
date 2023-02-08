@@ -6,13 +6,13 @@ import WhyChose from "../components/home/WhyChose";
 
 const Home = () => {
   return (
-    <>
+    <div className="container">
       <TopBanner />
       <WhyChose />
       <Products />
       <CustomarReview />
       <Faq />
-    </>
+    </div>
   );
 };
 

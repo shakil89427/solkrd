@@ -8,7 +8,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import { FaWhatsappSquare } from "react-icons/fa";
-import mainlogo from "../assets/images/logo2.png";
+import logocir from "../assets/images/logocir.png";
 
 const User = () => {
   const { userId } = useParams();
@@ -25,12 +25,13 @@ const User = () => {
     <div className="flex items-center justify-center w-full h-full bg-black">
       <div className="w-full h-full md:max-w-[450px] md:h-[90%] md:max-h-[850px] overflow-hidden bg-white">
         <div className="h-16 bg-blue-200/60 relative flex items-center pl-5">
-          <img src={mainlogo} alt="" className="w-28" />
+          <img loading="lazy" src={logocir} alt="" className="w-28" />
           <div className="absolute bg-blue-400 w-72 h-72 rounded-full right-0 top-0 translate-x-1/2 -translate-y-2/3" />
         </div>
         <div className="px-5">
           <div className="flex items-center justify-between mt-5 text-center">
             <img
+              loading="lazy"
               src={data?.profileImageUrl}
               alt=""
               className="w-20 h-20 rounded-full object-cover object-center"
