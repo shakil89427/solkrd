@@ -19,7 +19,7 @@ const Products = () => {
     );
   }
 
-  if (isError) {
+  if (isError || !Array.isArray(data)) {
     return null;
   }
 

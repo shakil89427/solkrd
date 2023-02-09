@@ -1,4 +1,4 @@
-import privacypolicybanner from "../assets/images/privacypolicybanner.jpg";
+import privacypolicybanner from "../assets/images/privacypolicybanner.png";
 import bigbg from "../assets/images/bigbg.png";
 
 const Privacy = () => {

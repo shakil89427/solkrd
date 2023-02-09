@@ -1,13 +1,55 @@
 import { useState } from "react";
 import FaqItem from "./FaqItem";
 
-const data = {
-  title: "Regardless of the plan, all new users",
-  text: "Regardless of the plan, all new users get to try out our Premium features for free—for 30 days. You will not be asked to provide any billing information. When the 30 days are up, you’ll automatically lose access to the Premium features, but you can continue using Track on the Free plan.",
-};
+const data = [
+  {
+    question: "What is the SolKRD Card made up of?",
+    answer: "SolKRD Card is made up of PVC.",
+    id: 1,
+  },
+  {
+    question: "How many things can I save in SolKRD ?",
+    answer:
+      "You can save your personal information like social media links, contact details, emails, product details and much more.",
+    id: 2,
+  },
+  {
+    question: "Can I Update my profile on SolKRD ?",
+    answer: "Yes, you can update your information on SolKRD anytime and anywhere.",
+    id: 3,
+  },
+  {
+    question: "Do I need to pay any monthly or yearly charges after buying a Card?",
+    answer: "No, you don’t need to pay any charges. You can use the card forever.",
+    id: 4,
+  },
+  {
+    question: "How does SolKRD work ?",
+    answer:
+      "It works in 3 ways, 1) By tapping on any mobile device 2) By scanning QR code 3) By sharing your profile link.",
+    id: 5,
+  },
+  {
+    question: "Does it work on my device ?",
+    answer: "SolKRD works on every Android or IOS device.",
+    id: 6,
+  },
+  {
+    question: "How can I place an order for SolKRD ?",
+    answer:
+      "You can place an order from an Android or IOS app. Download the app from PlayStore or AppStore.",
+    id: 7,
+  },
+  {
+    question: "Can I print my QR code & use it in my daily life ?",
+    answer:
+      "Yes, you can download your qr code from SolKRD Android or IOS app and you can simply print it. You can use your profile QR code in Your reception, any type of brochures or any place where you can easily place it.",
+    id: 8,
+  },
+];
 
 const Faq = () => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(0);
 
   return (
     <div className="pt-8 pb-14 mt-5">
@@ -15,8 +57,8 @@ const Faq = () => {
         FAQ's
       </p>
       <div className="grid grid-cols-1 gap-y-3 mt-5 max-w-[900px] mx-auto">
-        {new Array(5).fill(data).map((item, index) => (
-          <FaqItem {...{ selected, setSelected, item, index }} key={index} />
+        {data.map((item) => (
+          <FaqItem {...{ selected: selected === item.id, setSelected, item }} key={item.id} />
         ))}
       </div>
     </div>

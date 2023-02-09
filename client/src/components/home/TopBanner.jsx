@@ -16,7 +16,7 @@ const TopBanner = () => {
     );
   }
 
-  if (isError) {
+  if (isError || !Array.isArray(data)) {
     return null;
   }
 

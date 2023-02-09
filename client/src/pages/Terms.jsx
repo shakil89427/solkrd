@@ -1,4 +1,4 @@
-import termsconditionbanner from "../assets/images/termsconditionbanner.jpg";
+import termsconditionbanner from "../assets/images/termsconditionbanner.png";
 import bigbg from "../assets/images/bigbg.png";
 
 const Terms = () => {
