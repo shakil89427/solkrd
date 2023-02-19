@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .container {
+    @apply w-full sm:max-w-[610px] md:max-w-[720px] lg:max-w-[970px] xl:max-w-[1200px] 2xl:max-w-[1400px] px-2 mx-auto;
+  }
+}
+
 @layer utilities {
   .hidescroll {
     -ms-overflow-style: none;

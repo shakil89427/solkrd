@@ -52,8 +52,8 @@ const Faq = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className="pt-8 pb-14 mt-5">
-      <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-800 text-center">
+    <div className="mt-10 lg:mt-16 xl:mt-20 container mb-20">
+      <p className="text-blue-800 font-semibold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
         FAQ's
       </p>
       <div className="grid grid-cols-1 gap-y-3 mt-5 max-w-[900px] mx-auto">
