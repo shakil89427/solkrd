@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const userValidator = require("../validators/user.validator");
 const admin = require("../firebase/admin");
+const moment = require("moment");
 
 module.exports.getUser = async (req, res, next) => {
   try {
@@ -40,6 +41,18 @@ module.exports.updateUsersLinks = async (req, res, next) => {
       .doc(linkId)
       .update({ visits: admin.firestore.FieldValue.increment(1) });
     res.send("Successfully updated");
+  } catch (error) {
+    if (error.isJoi) error.status = 422;
+    next(error);
+  }
+};
+
+module.exports.addUsersContacts = async (req, res, next) => {
+  try {
+    const { userId, ...rest } = await userValidator.addUsersContacts.validateAsync(req.body);
+    rest.creationDate = moment().unix();
+    await admin.firestore().collection("users").doc(userId).collection("contacts").add(rest);
+    res.send("Successfully added");
   } catch (error) {
     if (error.isJoi) error.status = 422;
     next(error);
