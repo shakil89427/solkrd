@@ -18,7 +18,7 @@ const Header = () => {
           onClick={() => navigate("/")}
           src={logorect}
           alt=""
-          className="h-full justify-self-center cursor-pointer"
+          className="h-full cursor-pointer"
         />
         <div className="flex items-center gap-x-14">
           <div className="hidden lg:flex items-center gap-x-7">
