@@ -17,12 +17,12 @@ const Card = ({ product }) => {
       <button
         onClick={() => swiper?.slideNext && swiper.slideNext()}
         style={{ backgroundColor: product?.webTextColor }}
-        className="block mx-auto text-white px-5 py-1 text-sm rounded-lg font-medium"
+        className="block mx-auto text-white px-5 py-1 text-sm rounded-lg font-medium mb-3"
       >
         Front/Back
       </button>
-      <Swiper loop onInit={setSwiper} effect={"flip"} modules={[EffectFlip]} className="mt-3">
-        <SwiperSlide className="w-full">
+      <Swiper loop onInit={setSwiper} effect={"flip"} modules={[EffectFlip]}>
+        <SwiperSlide>
           <img
             loading="lazy"
             src={product?.blob[0]?.url}
