@@ -1,8 +1,9 @@
-const firestore = require("../firebase/admin").firestore();
+const admin = require("../firebase/admin");
 
 module.exports.getBanners = async (req, res, next) => {
   try {
-    const response = await firestore
+    const response = await admin
+      .firestore()
       .collection("homeSlider")
       .where("active", "==", true)
       .orderBy("position", "asc")
