@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useGetUser from "../hooks/queries/useGetUser";
 import logorect from "../assets/images/logorect.png";
 import HashLoader from "react-spinners/HashLoader";
@@ -7,6 +7,7 @@ import useUpdateUsersLinks from "../hooks/mutations/useUpdateUsersLinks";
 import useAddUsersContacts from "../hooks/mutations/useAddUsersContacts";
 
 const User = () => {
+  const navigate = useNavigate();
   const { userId } = useParams();
   const [showContact, setShowContact] = useState(false);
   const [name, setName] = useState("");
@@ -47,7 +48,13 @@ const User = () => {
       {data?.userId && (
         <div className="w-full h-full md:max-w-[450px] md:h-[90%] md:max-h-[850px] overflow-hidden bg-white relative flex flex-col items-start justify-start md:rounded-xl">
           <div className="h-16 bg-mediumblue px-2 flex items-center w-full shrink-0">
-            <img loading="lazy" src={logorect} alt="" className="w-28" />
+            <img
+              onClick={() => navigate("/")}
+              loading="lazy"
+              src={logorect}
+              alt=""
+              className="w-28"
+            />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 mt-2 w-full shrink-0 px-2">
             <img
