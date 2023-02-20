@@ -56,7 +56,7 @@ const User = () => {
               loading="lazy"
               src={logorect}
               alt=""
-              className="w-28"
+              className="w-28 cursor-pointer"
             />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 mt-2 w-full shrink-0 px-2">
