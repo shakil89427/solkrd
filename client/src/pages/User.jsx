@@ -32,7 +32,10 @@ const User = () => {
     if (item?.type === "link") {
       window.open(item?.link);
     }
-    if (item?.type === "number") {
+    if (item?.type === "number" && item?.data?.includes("http")) {
+      window.open(item?.link);
+    }
+    if (item?.type === "number" && !item?.data?.includes("http")) {
       window.open(`tel:${item?.link}`);
     }
     if (item?.type === "email") {

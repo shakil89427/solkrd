@@ -36,7 +36,7 @@ const WhyChose = () => {
         {items.current.map((item) => (
           <div
             key={item.title}
-            className="bg-gray-100/50 rounded-xl p-5 lg:p-10 relative overflow-hidden"
+            className="bg-gray-100/40 rounded-xl p-5 lg:p-10 relative overflow-hidden border shadow-md"
           >
             <span className="text-5xl text-gray-600/90">{item.icon}</span>
             <p className="mt-7 mb-5 text-xl sm:text-2xl lg:text-3xl font-semibold text-lightblue">
