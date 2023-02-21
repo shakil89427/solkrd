@@ -1,8 +1,10 @@
 import { useState } from "react";
-import contactusbanner from "../assets/images/contactusbanner.png";
-import bigbg from "../assets/images/bigbg.png";
+import contactusbanner from "../../assets/images/contactusbanner.png";
+import bigbg from "../../assets/images/bigbg.png";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const Contact = () => {
+const Index = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -11,7 +13,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container px-0 sm:px-2">
+      <Header />
+      <div className="container px-0">
         <img
           loading="lazy"
           src={contactusbanner}
@@ -92,7 +95,8 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
-export default Contact;
+export default Index;

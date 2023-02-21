@@ -3,7 +3,7 @@ import demo1 from "../../assets/videos/demo1.mp4";
 
 const Demo2 = () => {
   return (
-    <div className="bg-gradient-to-r from-darkblue to-lightblue">
+    <div className="bg-gradient-to-r from-darkblue to-lightblue mt-10 lg:mt-16 xl:mt-20">
       <div className="container flex flex-col lg:flex-row-reverse items-center gap-10 py-8 sm:py-16 md:py-24 lg:py-32 xl:py-40">
         <video src={demo1} autoPlay muted loop className="rounded-xl w-full lg:w-1/2"></video>
         <div className="text-white xl:text-lg grow">

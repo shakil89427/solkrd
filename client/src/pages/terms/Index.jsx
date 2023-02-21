@@ -1,10 +1,13 @@
-import termsconditionbanner from "../assets/images/termsconditionbanner.png";
-import bigbg from "../assets/images/bigbg.png";
+import termsconditionbanner from "../../assets/images/termsconditionbanner.png";
+import bigbg from "../../assets/images/bigbg.png";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const Terms = () => {
+const Index = () => {
   return (
     <>
-      <div className="container px-0 sm:px-2">
+      <Header />
+      <div className="container px-0">
         <img
           loading="lazy"
           src={termsconditionbanner}
@@ -69,7 +72,8 @@ const Terms = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
-export default Terms;
+export default Index;

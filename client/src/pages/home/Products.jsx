@@ -1,14 +1,14 @@
-import HashLoader from "react-spinners/HashLoader";
 import useGetProducts from "../../hooks/queries/useGetProducts";
 import Card from "./Card";
+import Loading from "../../components/Loading";
 
 const Products = () => {
-  const { data, isInitialLoading, isError } = useGetProducts();
+  const { data, isLoading, isError } = useGetProducts();
 
-  if (isInitialLoading) {
+  if (isLoading) {
     return (
-      <div className="mt-5 w-fit mx-auto">
-        <HashLoader size={30} color="blue" />
+      <div className="mt-10 lg:mt-16 xl:mt-20 w-fit mx-auto">
+        <Loading />
       </div>
     );
   }

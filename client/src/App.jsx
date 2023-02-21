@@ -1,71 +1,67 @@
-import { useLayoutEffect, lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+// Main import
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 import LazyLoading from "./components/LazyLoading";
-import MainWrapper from "./components/MainWrapper";
-const Home = lazy(() => import("./pages/Home"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Terms = lazy(() => import("./pages/Terms"));
-const Privacy = lazy(() => import("./pages/Privacy"));
-const User = lazy(() => import("./pages/User"));
+import Watcher from "./components/Watcher";
+
+// Pages
+const Home = lazy(() => import("./pages/home/Index"));
+const Contact = lazy(() => import("./pages/contact/Index"));
+const Terms = lazy(() => import("./pages/terms/Index"));
+const Privacy = lazy(() => import("./pages/privacy/Index"));
+const User = lazy(() => import("./pages/user/Index"));
 
 const App = () => {
-  const { pathname } = useLocation();
-
-  useLayoutEffect(() => {
-    window.scroll(0, 0);
-  }, [pathname]);
-
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <MainWrapper>
-            <Suspense fallback={<LazyLoading />}>
+    <>
+      <Watcher />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense element={<LazyLoading />}>
               <Home />
             </Suspense>
-          </MainWrapper>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <MainWrapper>
-            <Suspense fallback={<LazyLoading />}>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <Suspense element={<LazyLoading />}>
               <Contact />
             </Suspense>
-          </MainWrapper>
-        }
-      />
-      <Route
-        path="/terms"
-        element={
-          <MainWrapper>
-            <Suspense fallback={<LazyLoading />}>
+          }
+        />
+
+        <Route
+          path="/terms"
+          element={
+            <Suspense element={<LazyLoading />}>
               <Terms />
             </Suspense>
-          </MainWrapper>
-        }
-      />
-      <Route
-        path="/privacy"
-        element={
-          <MainWrapper>
-            <Suspense fallback={<LazyLoading />}>
+          }
+        />
+
+        <Route
+          path="/privacy"
+          element={
+            <Suspense element={<LazyLoading />}>
               <Privacy />
             </Suspense>
-          </MainWrapper>
-        }
-      />
-      <Route
-        path="/user/:userId"
-        element={
-          <Suspense fallback={<LazyLoading />}>
-            <User />
-          </Suspense>
-        }
-      />
-    </Routes>
+          }
+        />
+
+        <Route
+          path="/user/:userId"
+          element={
+            <Suspense element={<LazyLoading />}>
+              <User />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </>
   );
 };
 
