@@ -5,7 +5,13 @@ const Demo2 = () => {
   return (
     <div className="bg-gradient-to-r from-darkblue to-lightblue mt-10 lg:mt-16 xl:mt-20">
       <div className="container flex flex-col lg:flex-row-reverse items-center gap-10 py-8 sm:py-16 md:py-24 lg:py-32 xl:py-40">
-        <video src={demo1} autoPlay muted loop className="rounded-xl w-full lg:w-1/2"></video>
+        <video
+          src={demo1}
+          autoPlay
+          muted
+          loop
+          className="rounded-xl w-full lg:w-1/2 shrink-0 overflow-hidden"
+        ></video>
         <div className="text-white xl:text-lg grow">
           <p
             style={{ lineHeight: "120%" }}
@@ -21,10 +27,6 @@ const Demo2 = () => {
             connect all your social media accounts, websites and more. You can also add a profile
             picture and any other URLs you would like to share with a single tap.
           </p>
-          <div className="flex text-blue-800 items-center justify-center gap-3 h-11 w-44 bg-white mt-5 rounded cursor-pointer select-none font-medium mx-auto lg:ml-0">
-            <p>Shop Now</p>
-            <BsArrowRight />
-          </div>
         </div>
       </div>
     </div>
