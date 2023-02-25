@@ -26,6 +26,7 @@ const Index = () => {
 
   const handleClick = async (item) => {
     if (item?.type === "address") {
+      window.open(`https://maps.google.com/?q=${item?.link}`);
     }
     if (item?.type === "upi") {
     }
@@ -156,11 +157,7 @@ const Index = () => {
             type="submit"
             className="bg-mediumblue h-11 rounded text-white font-medium flex items-center justify-center"
           >
-            {addUsersContacts.isLoading ? (
-              <HashLoader size={20} color="white" />
-            ) : (
-              <span>Submit</span>
-            )}
+            {addUsersContacts.isLoading ? <Loading size={20} color="#fff" /> : <span>Submit</span>}
           </button>
         </form>
       </div>
