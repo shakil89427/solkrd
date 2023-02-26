@@ -6,7 +6,6 @@ import Loading from "../../components/Loading";
 import useUpdateUsersLinks from "../../hooks/mutations/useUpdateUsersLinks";
 import useAddUsersContacts from "../../hooks/mutations/useAddUsersContacts";
 import { BsArrowLeft } from "react-icons/bs";
-import Attachment from "./Attachment";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -237,9 +236,14 @@ const Index = () => {
           {Array.isArray(showAttachment?.blob) && showAttachment?.blob?.length > 0 && (
             <div className="bg-blue-100/50 px-6">
               <Swiper>
-                {showAttachment?.blob?.map((url) => (
+                {showAttachment.blob.map((url) => (
                   <SwiperSlide key={url} className="w-full aspect-[16/10]">
-                    <Attachment url={url} />
+                    <img
+                      src={url}
+                      alt=""
+                      className="w-full h-full object-cover object-center"
+                      onClick={() => window.open(url)}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
