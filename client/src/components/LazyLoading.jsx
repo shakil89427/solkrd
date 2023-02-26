@@ -6,7 +6,7 @@ const LazyLoading = ({ children }) => {
     <Suspense
       fallback={
         <div className="fixed inset-0 flex items-center justify-center bg-white">
-          <DotLoader size={30} color="#0D82FF" />
+          <DotLoader size={40} color="#0D82FF" />
         </div>
       }
     >
