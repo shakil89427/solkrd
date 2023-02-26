@@ -23,7 +23,12 @@ const Index = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 my-16 sm:my-20 md:my-24 lg:my-28 gap-5 lg:gap-10 xl:gap-20 2xl:gap-28">
           {/* Android */}
           <div className="bg-mediumblue rounded-xl flex flex-col lg:flex-row items-center justify-center gap-5 py-10 lg:py-20 px-5">
-            <img src={logocir} alt="" className="w-20 border-2 border-white rounded-full" />
+            <img
+              src={logocir}
+              alt=""
+              className="w-20 border-2 border-white rounded-full"
+              loading="lazy"
+            />
             <a
               href="#"
               className="bg-white rounded-md flex items-center h-16 w-full max-w-[220px] p-3"
@@ -37,7 +42,12 @@ const Index = () => {
           </div>
           {/* Ios */}
           <div className="bg-mediumblue rounded-xl flex flex-col lg:flex-row items-center justify-center gap-5 py-10 lg:py-20 px-5">
-            <img src={logocir} alt="" className="w-20 border-2 border-white rounded-full" />
+            <img
+              src={logocir}
+              alt=""
+              className="w-20 border-2 border-white rounded-full"
+              loading="lazy"
+            />
             <a
               href="#"
               className="bg-white rounded-md flex items-center h-16 w-full max-w-[220px] p-3"
@@ -116,6 +126,7 @@ const Index = () => {
               src={demobg}
               alt=""
               className="w-full aspect-square rounded-xl object-cover object-center"
+              loading="lazy"
             />
           </div>
         </div>
