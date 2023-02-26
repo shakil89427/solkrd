@@ -1,5 +1,3 @@
-import privacypolicybanner from "../../assets/images/privacypolicybanner.png";
-import bigbg from "../../assets/images/bigbg.png";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
@@ -8,85 +6,38 @@ const Index = () => {
   return (
     <>
       <Header />
-      <div className="mb-28">
-        <div className="container px-0">
-          <img
-            loading="lazy"
-            src={privacypolicybanner}
-            alt=""
-            className="w-full aspect-[4/1.6] lg:aspect-[4/1.4] object-cover object-center"
-          />
-        </div>
-        <div className="container">
-          <div
-            style={{ backgroundImage: `url(${bigbg})` }}
-            className="my-5 p-5 sm:p-8 md:p-11 lg:p-14 bg-cover bg-center bg-no-repeat"
-          >
-            <p className="text-mediumblue font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
-              Privacy Policy
+      <div className="container mb-24 mt-10 lg:mt-16 xl:mt-20">
+        <div className="max-w-[1000px] mx-auto">
+          <p className="text-mediumblue font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
+            PRIVACY POLICY
+          </p>
+          <p className="text-center font-bold text-gray-500 mt-1">Last updated February 26, 2023</p>
+          <div style={{ lineHeight: "170%" }} className="mt-12 text-lg">
+            <p>
+              This privacy notice for Star SMPS Pvt Ltd (doing business as Solkrd) ("
+              <span className="font-bold">Solkrd</span>," "<span className="font-bold">we</span>," "
+              <span className="font-bold">us</span>," or "<span className="font-bold">our</span>"),
+              describes how and why we might collect, store, use, and/or share ("
+              <span className="font-bold">process</span>
+              ") your information when you use our services ("
+              <span className="font-bold">Services</span>"), such as when you:
             </p>
-            <p
-              style={{ lineHeight: "180%" }}
-              className="p-10 mt-5 bg-white text-gray-700 rounded-lg text-lg max-w-[1200px] mx-auto"
-            >
-              Thank you for choosing to be part of our community at SolKrd ("Company," "we," "us,"
-              or "our"). We are committed to protecting your personal details and your right to
-              privacy. If you have any questions or concerns about this privacy notice or our
-              practices with regard to your personal information, please contact us or Visit our
-              website at{" "}
-              <Link to="/" className="text-mediumblue">
-                solkrd.com
-              </Link>
-            </p>
-            <p className="text-mediumblue font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center mt-5">
-              Points to remember:
-            </p>
-            <div
-              style={{ lineHeight: "180%" }}
-              className="p-10 mt-5 bg-white text-gray-700 rounded-lg text-lg max-w-[1200px] mx-auto"
-            >
-              <span>
-                This privacy notice describes you how we might use your information if you:
-              </span>
-              <br />
-              <br />
-              <li>"Visit our website at https://solkrd.com"</li>
+            <ul className="list-outside list-disc ml-5 my-10">
               <li>
-                Engage with us in other related ways ― including any sales, marketing, or events.
+                Visit our website at{" "}
+                <Link to="/" className="text-mediumblue">
+                  https://solkrd.com
+                </Link>
+                , or any website of ours that links to this privacy notice
               </li>
-              <br />
-              <span>In this privacy notice, if we refer to:</span>
-              <br />
-              <br />
+              <li className="my-2">
+                Download and use our mobile application (Solkrd), or any other application of ours
+                that links to this privacy notice
+              </li>
               <li>
-                "Website," we are referring to any website of ours that references or links to this
-                policy.
+                Engage with us in other related ways, including any sales, marketing, or events
               </li>
-              <p className="mt-5">
-                2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quaerat
-                sapiente corporis quod, architecto sunt laboriosam ab. Magni perspiciatis illum
-                aliquid. Vero, ipsum. Accusamus illum iusto optio ratione facere ut asperiores
-                cumque earum in. Corrupti repudiandae quo cum at officiis cupiditate odit, harum
-                numquam molestiae porro ullam nihil quasi, cumque quisquam consequuntur praesentium
-                maxime quia error
-              </p>
-              <p className="mt-5">
-                2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quaerat
-                sapiente corporis quod, architecto sunt laboriosam ab. Magni perspiciatis illum
-                aliquid. Vero, ipsum. Accusamus illum iusto optio ratione facere ut asperiores
-                cumque earum in. Corrupti repudiandae quo cum at officiis cupiditate odit, harum
-                numquam molestiae porro ullam nihil quasi, cumque quisquam consequuntur praesentium
-                maxime quia error
-              </p>
-              <p className="mt-5">
-                2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quaerat
-                sapiente corporis quod, architecto sunt laboriosam ab. Magni perspiciatis illum
-                aliquid. Vero, ipsum. Accusamus illum iusto optio ratione facere ut asperiores
-                cumque earum in. Corrupti repudiandae quo cum at officiis cupiditate odit, harum
-                numquam molestiae porro ullam nihil quasi, cumque quisquam consequuntur praesentium
-                maxime quia error
-              </p>
-            </div>
+            </ul>
           </div>
         </div>
       </div>
