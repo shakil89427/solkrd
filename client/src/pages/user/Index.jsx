@@ -247,6 +247,7 @@ const Index = () => {
                     src={url}
                     alt=""
                     className="h-full block mx-auto"
+                    loading="lazy"
                     onClick={() => window.open(url)}
                   />
                 </SwiperSlide>
