@@ -7,7 +7,9 @@ import useUpdateUsersLinks from "../../hooks/mutations/useUpdateUsersLinks";
 import useAddUsersContacts from "../../hooks/mutations/useAddUsersContacts";
 import { BsArrowLeft } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/pagination";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -235,7 +237,7 @@ const Index = () => {
           </div>
           {Array.isArray(showAttachment?.blob) && showAttachment?.blob?.length > 0 && (
             <div className="bg-blue-100/50 px-6">
-              <Swiper>
+              <Swiper pagination={true} modules={[Pagination]}>
                 {showAttachment.blob.map((url) => (
                   <SwiperSlide key={url} className="w-full aspect-[16/10]">
                     <img

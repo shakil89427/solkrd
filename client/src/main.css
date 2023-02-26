@@ -19,11 +19,11 @@
   }
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/* Global */
+.swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: white;
 }
-input[type="number"] {
-  -moz-appearance: textfield;
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #0d82ff;
 }
