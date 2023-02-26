@@ -137,7 +137,9 @@ const Index = () => {
               onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Enter your name"
-              className="h-11 px-2 rounded border outline-none w-full mt-1"
+              className={`h-11 px-2 rounded border outline-none w-full mt-1 focus:border-black/80 ${
+                name ? "border-black/80" : ""
+              }`}
             />
           </div>
           <div>
@@ -148,7 +150,9 @@ const Index = () => {
               required
               type="email"
               placeholder="Enter your email"
-              className="h-11 px-2 rounded border outline-none w-full mt-1"
+              className={`h-11 px-2 rounded border outline-none w-full mt-1 focus:border-black/80 ${
+                email ? "border-black/80" : ""
+              }`}
             />
           </div>
           <div>
@@ -161,7 +165,9 @@ const Index = () => {
               required
               type="text"
               placeholder="Enter your phone"
-              className="h-11 px-2 rounded border outline-none w-full mt-1"
+              className={`h-11 px-2 rounded border outline-none w-full mt-1 focus:border-black/80 ${
+                phone ? "border-black/80" : ""
+              }`}
             />
           </div>
           <div>
@@ -172,7 +178,9 @@ const Index = () => {
               required
               rows="5"
               placeholder="Type your message here"
-              className="p-2 rounded border outline-none resize-none w-full mt-1"
+              className={`p-2 rounded border outline-none resize-none w-full mt-1 focus:border-black/80 ${
+                message ? "border-black/80" : ""
+              }`}
             ></textarea>
           </div>
           <button
