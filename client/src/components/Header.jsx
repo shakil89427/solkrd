@@ -6,7 +6,7 @@ const Header = () => {
   const navigate = useNavigate();
   const navigateItems = useRef([
     { title: "Shop", to: "/" },
-    { title: "Download", to: "/" },
+    { title: "Download", to: "/download" },
     { title: "Support", to: "/" },
   ]);
 
@@ -26,7 +26,7 @@ const Header = () => {
               <Link
                 key={item.title}
                 to={item.to}
-                className="py-1.5 text-lg text-white uppercase font-medium relative [&>:nth-child(2)]:hover:scale-x-100"
+                className="py-1.5 text-white uppercase font-bold relative [&>:nth-child(2)]:hover:scale-x-100"
               >
                 <span>{item.title}</span>
                 <span className="absolute w-full scale-x-0 duration-300 left-0 bottom-0 h-0.5 bg-white" />

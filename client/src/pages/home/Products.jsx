@@ -19,7 +19,7 @@ const Products = () => {
 
   return (
     <div className="mt-10 lg:mt-16 xl:mt-20 container">
-      <p className="text-mediumblue font-semibold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
+      <p className="text-mediumblue font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
         SolKrd Products
       </p>
       <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">

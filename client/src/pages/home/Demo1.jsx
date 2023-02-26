@@ -14,13 +14,13 @@ const Demo1 = () => {
         <div className="text-white xl:text-lg flex flex-col items-start justify-center">
           <p
             style={{ lineHeight: "120%" }}
-            className="font-semibold text-2xl sm:text-3xl md:text-4xl xl:text-5xl mt-5 max-w-[20ch] text-center mx-auto sm:ml-0 sm:text-left"
+            className="font-bold text-2xl sm:text-3xl md:text-4xl xl:text-5xl mt-5 max-w-[20ch] text-center mx-auto sm:ml-0 sm:text-left"
           >
             Find the right business card for you
           </p>
           <p
             style={{ lineHeight: "170%" }}
-            className="mt-3 text-gray-100/90 text-center sm:text-left"
+            className="mt-3 text-gray-100/90 text-center sm:text-left font-medium"
           >
             If you're like most people, you probably have a stack of business cards sitting in your
             wallet. And if you're like most people, those business cards are not doing much for you.

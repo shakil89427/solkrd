@@ -15,13 +15,13 @@ const Demo2 = () => {
         <div className="text-white xl:text-lg grow">
           <p
             style={{ lineHeight: "120%" }}
-            className="font-semibold text-2xl sm:text-3xl md:text-4xl xl:text-5xl mt-5 max-w-[20ch] text-center mx-auto lg:ml-0 lg:text-left"
+            className="font-bold text-2xl sm:text-3xl md:text-4xl xl:text-5xl mt-5 max-w-[20ch] text-center mx-auto lg:ml-0 lg:text-left"
           >
             Networking has never been easier
           </p>
           <p
             style={{ lineHeight: "170%" }}
-            className="mt-3 text-gray-100/90 text-center lg:text-left"
+            className="mt-3 text-gray-100/90 text-center lg:text-left font-medium"
           >
             Want to share your Facebook or LinkedIn profiles easily? Luckily, the card allows you to
             connect all your social media accounts, websites and more. You can also add a profile

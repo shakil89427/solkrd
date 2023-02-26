@@ -10,6 +10,7 @@ const Contact = lazy(() => import("./pages/contact/Index"));
 const Terms = lazy(() => import("./pages/terms/Index"));
 const Privacy = lazy(() => import("./pages/privacy/Index"));
 const User = lazy(() => import("./pages/user/Index"));
+const Download = lazy(() => import("./pages/download/Index"));
 
 const App = () => {
   return (
@@ -48,6 +49,15 @@ const App = () => {
           element={
             <Suspense element={<LazyLoading />}>
               <Privacy />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/download"
+          element={
+            <Suspense element={<LazyLoading />}>
+              <Download />
             </Suspense>
           }
         />

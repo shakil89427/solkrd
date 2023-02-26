@@ -19,10 +19,10 @@ const Footer = () => {
           {/* 1 */}
           <div className="flex items-start justify-center text-white">
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold max-w-[15ch] mx-auto text-center md:ml-0 md:text-left">
+              <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-[15ch] mx-auto text-center md:ml-0 md:text-left">
                 We would love to hear from you.
               </p>
-              <p className="max-w-[25ch] my-5 text-sm lg:text-base mx-auto text-center md:ml-0 md:text-left">
+              <p className="max-w-[25ch] my-5 text-sm lg:text-base mx-auto text-center md:ml-0 md:text-left font-medium">
                 Feel free to reach out if you want to collaborate with us, or simply have a call.
               </p>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-3xl">
@@ -49,28 +49,28 @@ const Footer = () => {
           </div>
           {/* 2 */}
           <div className="flex flex-col items-center justify-start">
-            <p className="text-lg md:text-xl font-semibold text-white">Quick Links</p>
+            <p className="text-lg md:text-xl font-bold text-white">Quick Links</p>
             <Link
               to="/terms"
-              className="mt-4 md:mt-7 font-medium md:text-lg text-gray-300 hover:text-white duration-150"
+              className="mt-4 md:mt-7 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Terms
             </Link>
             <Link
               to="/"
-              className="mt-4 font-medium md:text-lg text-gray-300 hover:text-white duration-150"
+              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               About
             </Link>
             <Link
               to="/contact"
-              className="mt-4 font-medium md:text-lg text-gray-300 hover:text-white duration-150"
+              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Contact
             </Link>
             <Link
               to="/privacy"
-              className="mt-4 font-medium md:text-lg text-gray-300 hover:text-white duration-150"
+              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Privacy
             </Link>
@@ -78,28 +78,28 @@ const Footer = () => {
           {/* 3 */}
           <div className="flex items-start justify-center">
             <div>
-              <p className="text-lg md:text-xl font-semibold text-white text-center md:text-left">
+              <p className="text-lg md:text-xl font-bold text-white text-center md:text-left">
                 Company
               </p>
               <div className="flex items-start gap-3 mt-4 md:mt-7 text-gray-300">
                 <AiTwotoneMail className="text-xl mt-0.5 md:mt-1" />
                 <div>
                   <p className="md:text-lg font-semibold text-white">Email</p>
-                  <p className="text-sm md:text-base">info@solkrd.com</p>
+                  <p className="text-sm md:text-base font-medium">info@solkrd.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 mt-4 text-gray-300">
                 <AiFillPhone className="text-xl mt-0.5 md:mt-1" />
                 <div>
                   <p className="md:text-lg font-semibold text-white">Call us</p>
-                  <p className="text-sm md:text-base">+91 80538 71854</p>
+                  <p className="text-sm md:text-base font-medium">+91 80538 71854</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 mt-4 text-gray-300">
                 <BsFillGeoAltFill className="text-xl mt-0.5 md:mt-1" />
                 <div className="">
                   <p className="md:text-lg font-semibold text-white">Location</p>
-                  <p className="text-sm md:text-base">Sonipat, Haryana</p>
+                  <p className="text-sm md:text-base font-medium">Sonipat, Haryana</p>
                 </div>
               </div>
             </div>

@@ -11,12 +11,14 @@ const Index = () => {
   return (
     <>
       <Header />
-      <TopBanner />
-      <Products />
-      <Demo1 />
-      <WhyChose />
-      <Demo2 />
-      <Faq />
+      <div className="mb-28">
+        <TopBanner />
+        <Products />
+        <Demo1 />
+        <WhyChose />
+        <Demo2 />
+        <Faq />
+      </div>
       <Footer />
     </>
   );

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-flip";
+import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
   const [swiper, setSwiper] = useState({});
@@ -17,7 +18,7 @@ const Card = ({ product }) => {
       <button
         onClick={() => swiper?.slideNext && swiper.slideNext()}
         style={{ backgroundColor: product?.webTextColor }}
-        className="block mx-auto text-white px-5 py-1 text-sm rounded-lg font-medium mb-3"
+        className="block mx-auto text-white px-5 py-1 text-sm rounded-lg font-semibold mb-3"
       >
         Front/Back
       </button>
@@ -39,23 +40,21 @@ const Card = ({ product }) => {
           />
         </SwiperSlide>
       </Swiper>
-      <p
-        style={{ color: product?.webTextColor }}
-        className="text-xl text-center font-semibold mt-3"
-      >
+      <p style={{ color: product?.webTextColor }} className="text-xl text-center font-bold mt-3">
         {product?.name}
       </p>
       <p className="text-sm text-center mt-3 line-clamp-3">{product?.description}</p>
       <div className="flex items-center justify-center mt-3 gap-2">
-        <del className="text-sm text-gray-500">Rs.{product?.inStrikePrice}</del>
-        <p className="text-xl font-semibold text-lightblue">Rs.{product?.inPrice}/-</p>
+        <del className="text-sm text-gray-500 font-semibold">Rs.{product?.inStrikePrice}</del>
+        <p className="text-xl font-bold text-lightblue">Rs.{product?.inPrice}/-</p>
       </div>
-      <button
+      <Link
+        to="/download"
         style={{ backgroundColor: product?.webTextColor }}
-        className="text-white block mx-auto px-7 py-2 rounded-full mt-3 text-sm font-medium"
+        className="text-white block mx-auto w-full max-w-[200px] py-2 text-center rounded-full mt-3 font-semibold"
       >
         Download the app
-      </button>
+      </Link>
     </div>
   );
 };

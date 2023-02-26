@@ -7,10 +7,10 @@ const FaqItem = ({ selected, setSelected, item }) => {
   return (
     <div
       onClick={() => setSelected(selected ? false : item.id)}
-      className="p-5 cursor-pointer bg-gray-100/80 select-none rounded-lg"
+      className="p-5 cursor-pointer bg-blue-100/40 select-none rounded-lg text-black/80"
     >
-      <div className="flex items-center justify-between">
-        <p className="select-none text-base">{item.question}</p>
+      <div className="flex items-center justify-between font-medium">
+        <p className="select-none font-semibold">{item.question}</p>
         <AiOutlinePlus className={`duration-300 ${selected ? "rotate-45" : "rotate-0"}`} />
       </div>
       <p
@@ -22,7 +22,7 @@ const FaqItem = ({ selected, setSelected, item }) => {
           paddingBottom: selected ? "8px" : "0px",
         }}
         onClick={(e) => e.stopPropagation()}
-        className="duration-300 text-sm bg-white px-2 overflow-hidden cursor-auto select-text"
+        className="duration-300 bg-white px-2 overflow-hidden cursor-auto select-text font-medium rounded"
       >
         {item.answer}
       </p>

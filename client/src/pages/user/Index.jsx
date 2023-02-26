@@ -78,11 +78,11 @@ const Index = () => {
             alt=""
             className="w-20 h-20 rounded-full object-cover object-center"
           />
-          <p className="font-semibold text-lg text-mediumblue">{data?.name}</p>
-          <p className="text-xs text-gray-600 max-w-[80%] text-center">{data?.bio}</p>
+          <p className="font-bold text-lg text-mediumblue">{data?.name}</p>
+          <p className="text-sm text-gray-600 max-w-[80%] text-center">{data?.bio}</p>
           <button
             onClick={() => setShowContact(true)}
-            className="bg-mediumblue h-12 w-full mt-2 rounded-lg text-white font-medium max-w-[60%]"
+            className="bg-mediumblue h-12 w-full mt-2 rounded-md text-white font-semibold max-w-[60%] text-lg"
           >
             Contact
           </button>
@@ -93,7 +93,7 @@ const Index = () => {
               <div
                 key={item?.linkId}
                 onClick={() => handleClick(item)}
-                className="bg-lightblue/5 p-5 rounded-lg shadow hover:scale-105 duration-150 cursor-pointer select-none"
+                className="bg-lightblue/5 p-5 pb-2 rounded-lg shadow hover:scale-105 duration-150 cursor-pointer select-none"
               >
                 <img
                   className="w-full aspect-square object-cover object-center rounded-xl"
