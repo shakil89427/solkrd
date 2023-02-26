@@ -1,5 +1,5 @@
 // Main import
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import LazyLoading from "./components/LazyLoading";
 import Watcher from "./components/Watcher";
@@ -20,54 +20,54 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <Home />
-            </Suspense>
+            </LazyLoading>
           }
         />
 
         <Route
           path="/contact"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <Contact />
-            </Suspense>
+            </LazyLoading>
           }
         />
 
         <Route
           path="/terms"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <Terms />
-            </Suspense>
+            </LazyLoading>
           }
         />
 
         <Route
           path="/privacy"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <Privacy />
-            </Suspense>
+            </LazyLoading>
           }
         />
 
         <Route
           path="/download"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <Download />
-            </Suspense>
+            </LazyLoading>
           }
         />
 
         <Route
           path="/user/:userId"
           element={
-            <Suspense element={<LazyLoading />}>
+            <LazyLoading>
               <User />
-            </Suspense>
+            </LazyLoading>
           }
         />
       </Routes>
