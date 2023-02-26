@@ -236,20 +236,22 @@ const Index = () => {
             <p className="text-xl font-bold">Attachment</p>
           </div>
           {Array.isArray(showAttachment?.blob) && showAttachment?.blob?.length > 0 && (
-            <div className="bg-blue-100/50 px-6">
-              <Swiper pagination={true} modules={[Pagination]}>
-                {showAttachment.blob.map((url) => (
-                  <SwiperSlide key={url} className="w-full aspect-[16/10]">
-                    <img
-                      src={url}
-                      alt=""
-                      className="w-full h-full object-cover object-center"
-                      onClick={() => window.open(url)}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+            <Swiper
+              pagination={true}
+              modules={[Pagination]}
+              className="bg-black aspect-video w-full"
+            >
+              {showAttachment.blob.map((url) => (
+                <SwiperSlide key={url}>
+                  <img
+                    src={url}
+                    alt=""
+                    className="h-full block mx-auto"
+                    onClick={() => window.open(url)}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           )}
           <div className="p-5">
             <p className="text-lg text-gray-500 font-bold">Title:</p>
