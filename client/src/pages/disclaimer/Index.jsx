@@ -14,7 +14,7 @@ const Index = () => {
           <p className="text-center font-bold text-gray-500 mt-1">Last updated February 26, 2023</p>
           <div style={{ lineHeight: "170%" }} className="mt-12 text-lg text-black/80">
             <p className="text-lg font-extrabold">WEBSITE DISCLAIMER</p>
-            <p className="mt-5">
+            <p className="mt-8">
               The information provided by Star SMPS Pvt Ltd ("<span className="font-bold">we</span>
               ," "<span className="font-bold">us</span>," or "<span className="font-bold">our</span>
               ") on {""}
