@@ -14,6 +14,7 @@ const Return = lazy(() => import("./pages/return/Index"));
 const Shipping = lazy(() => import("./pages/shipping/Index"));
 const Terms = lazy(() => import("./pages/terms/Index"));
 const User = lazy(() => import("./pages/user/Index"));
+const NotFound = lazy(() => import("./pages/404/Index"));
 
 const App = () => {
   return (
@@ -62,7 +63,7 @@ const App = () => {
 
         {/* Privacy */}
         <Route
-          path="/privacy"
+          path="/privacypolicy"
           element={
             <LazyLoading>
               <Privacy />
@@ -72,7 +73,7 @@ const App = () => {
 
         {/* Return */}
         <Route
-          path="/return"
+          path="/returnpolicy"
           element={
             <LazyLoading>
               <Return />
@@ -82,7 +83,7 @@ const App = () => {
 
         {/* Shipping */}
         <Route
-          path="/shipping"
+          path="/shippingpolicy"
           element={
             <LazyLoading>
               <Shipping />
@@ -106,6 +107,16 @@ const App = () => {
           element={
             <LazyLoading>
               <User />
+            </LazyLoading>
+          }
+        />
+
+        {/* Not Found */}
+        <Route
+          path="*"
+          element={
+            <LazyLoading>
+              <NotFound />
             </LazyLoading>
           }
         />

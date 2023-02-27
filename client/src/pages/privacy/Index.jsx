@@ -25,7 +25,7 @@ const Index = () => {
             <div className="my-10">
               <li>
                 Visit our website at{" "}
-                <Link to="/" className="text-mediumblue">
+                <Link to="/" className="text-mediumblue break-words">
                   {window.location.origin}
                 </Link>
                 , or any website of ours that links to this privacy notice

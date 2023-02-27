@@ -18,7 +18,7 @@ const Index = () => {
               The information provided by Star SMPS Pvt Ltd ("<span className="font-bold">we</span>
               ," "<span className="font-bold">us</span>," or "<span className="font-bold">our</span>
               ") on {""}
-              <Link to="/" className="text-mediumblue">
+              <Link to="/" className="text-mediumblue break-words">
                 {window.location.origin}
               </Link>{" "}
               (the "<span className="font-bold">Site</span>") and our mobile application is for

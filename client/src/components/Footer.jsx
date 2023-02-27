@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-darkblue">
+    <div className="bg-darkblue w-full">
       <div className="container">
         <div className="py-20 grid grid-cols-1 md:grid-cols-3 border-b border-mediumblue gap-y-14 md:gap-y-0 md:gap-x-5 lg:gap-x-10">
           {/* 1 */}
@@ -58,21 +58,21 @@ const Footer = () => {
             </Link>
 
             <Link
-              to="/privacy"
+              to="/privacypolicy"
               className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Privacy Policy
             </Link>
 
             <Link
-              to="/return"
+              to="/returnpolicy"
               className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Return Policy
             </Link>
 
             <Link
-              to="/shipping"
+              to="/shippingpolicy"
               className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
               Shipping Policy

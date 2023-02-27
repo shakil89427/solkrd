@@ -12,7 +12,9 @@ const Index = () => {
             TERMS AND CONDITIONS
           </p>
           <p className="text-center font-bold text-gray-500 mt-1">Last updated February 26, 2023</p>
-          <div style={{ lineHeight: "170%" }} className="mt-12 text-lg text-black/80"></div>
+          <div style={{ lineHeight: "170%" }} className="mt-12 text-lg text-black/80">
+            <p className="text-center text-2xl my-40 font-semibold">Will update soon...</p>
+          </div>
         </div>
       </div>
       <Footer />

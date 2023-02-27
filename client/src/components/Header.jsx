@@ -11,7 +11,7 @@ const Header = () => {
   ]);
 
   return (
-    <div className="bg-darkblue">
+    <div className="bg-darkblue w-full">
       <div className="container h-16 lg:h-20 flex items-center justify-between py-3.5">
         <img
           loading="lazy"
