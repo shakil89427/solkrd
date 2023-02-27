@@ -3,10 +3,10 @@ import {
   AiFillTwitterSquare,
   AiFillInstagram,
   AiFillLinkedin,
-  AiFillYoutube,
-  AiOutlineWhatsApp,
+  AiFillRedditSquare,
   AiTwotoneMail,
   AiFillPhone,
+  AiTwotoneUpSquare,
 } from "react-icons/ai";
 import { BsFillGeoAltFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const Footer = () => {
               <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-[15ch] mx-auto text-center md:ml-0 md:text-left">
                 We would love to hear from you.
               </p>
-              <p className="max-w-[25ch] my-5 text-sm lg:text-base mx-auto text-center md:ml-0 md:text-left font-medium">
+              <p className="max-w-[25ch] mt-5 mb-10 text-sm lg:text-base mx-auto text-center md:ml-0 md:text-left font-medium">
                 Feel free to reach out if you want to collaborate with us, or simply have a call.
               </p>
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-3xl">
@@ -39,11 +39,11 @@ const Footer = () => {
                   <AiFillLinkedin />
                 </a>
                 <a href="#" className="hover:scale-105 duration-150">
-                  <AiFillYoutube />
+                  <AiFillRedditSquare />
                 </a>
-                <a href="#" className="hover:scale-105 duration-150">
-                  <AiOutlineWhatsApp />
-                </a>
+                <Link to="/contact" className="hover:scale-105 duration-150">
+                  <AiTwotoneMail />
+                </Link>
               </div>
             </div>
           </div>
@@ -51,28 +51,38 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-start">
             <p className="text-lg md:text-xl font-bold text-white">Quick Links</p>
             <Link
-              to="/terms"
+              to="/disclaimer"
               className="mt-4 md:mt-7 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
-              Terms
+              Disclaimer
             </Link>
-            <Link
-              to="/"
-              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
-            >
-              Contact
-            </Link>
+
             <Link
               to="/privacy"
-              className="mt-4 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
+              className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
             >
-              Privacy
+              Privacy Policy
+            </Link>
+
+            <Link
+              to="/return"
+              className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
+            >
+              Return Policy
+            </Link>
+
+            <Link
+              to="/shipping"
+              className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
+            >
+              Shipping Policy
+            </Link>
+
+            <Link
+              to="/terms"
+              className="mt-3 font-semibold md:text-lg text-gray-300 hover:text-white duration-150"
+            >
+              Terms & Conditions
             </Link>
           </div>
           {/* 3 */}
