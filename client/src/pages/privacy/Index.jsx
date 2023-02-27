@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <>
       <Header />
-      <div className="container mb-24 mt-10 lg:mt-16 xl:mt-20">
+      <div className="container px-5 mb-24 mt-10 lg:mt-16 xl:mt-20">
         <div className="max-w-[1000px] mx-auto">
           <p className="text-mediumblue font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-center">
             PRIVACY POLICY
@@ -365,7 +365,7 @@ const Index = () => {
               <a
                 href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html.
               </a>
@@ -376,7 +376,7 @@ const Index = () => {
               <a
                 href="https://www.edoeb.admin.ch/edoeb/en/home.html"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 https://www.edoeb.admin.ch/edoeb/en/home.html.
               </a>
@@ -412,7 +412,7 @@ const Index = () => {
               <a
                 href="mailto:contactsolkrd001@gmail.com"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 contactsolkrd001@gmail.com
               </a>
@@ -660,7 +660,7 @@ const Index = () => {
               <a
                 href="mailto:contactsolkrd001@gmail.com"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 contactsolkrd001@gmail.com
               </a>
@@ -792,7 +792,7 @@ const Index = () => {
               <a
                 href="mailto:contactsolkrd001@gmail.com"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 contactsolkrd001@gmail.com
               </a>
@@ -813,12 +813,12 @@ const Index = () => {
               to be informed of how we are protecting your information.
             </p>
             <p className="font-extrabold mt-12">11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</p>
-            <p>
+            <p className="mt-5">
               If you have questions or comments about this notice, you may email us at{" "}
               <a
                 href="mailto:contactsolkrd001@gmail.com"
                 target="_blank"
-                className="text-mediumblue"
+                className="text-mediumblue break-words"
               >
                 contactsolkrd001@gmail.com
               </a>{" "}
