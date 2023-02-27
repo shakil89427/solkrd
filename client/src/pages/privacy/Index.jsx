@@ -26,7 +26,7 @@ const Index = () => {
               <li>
                 Visit our website at{" "}
                 <Link to="/" className="text-mediumblue">
-                  https://solkrd.com
+                  {window.location.origin}
                 </Link>
                 , or any website of ours that links to this privacy notice
               </li>

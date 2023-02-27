@@ -19,7 +19,7 @@ const Index = () => {
               ," "<span className="font-bold">us</span>," or "<span className="font-bold">our</span>
               ") on {""}
               <Link to="/" className="text-mediumblue">
-                https://solkrd.com
+                {window.location.origin}
               </Link>{" "}
               (the "<span className="font-bold">Site</span>") and our mobile application is for
               general informational purposes only. All information on the Site and our mobile
