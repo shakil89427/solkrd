@@ -143,11 +143,11 @@ const Index = () => {
               If you wish to make any use of the Services, Content, or Marks other than as set out
               in this section or elsewhere in our Legal Terms, please address your request to:{" "}
               <a
-                href="mailto:solkrd001@gmail.com"
+                href="mailto:contactsolkrd001@gmail.com"
                 target="_blank"
                 className="text-mediumblue break-words"
               >
-                solkrd001@gmail.com
+                contactsolkrd001@gmail.com
               </a>
               . If we ever grant you the permission to post, reproduce, or publicly display any part
               of our Services or Content, you must identify us as the owners or licensors of the
