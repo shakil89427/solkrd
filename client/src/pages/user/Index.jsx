@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import { toast } from "react-toastify";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -100,7 +101,7 @@ const Index = () => {
           </button>
         </div>
         {/* Links */}
-        <div className="px-5 grow overflow-y-auto mt-8 hidescroll">
+        <div className="px-5 pb-5 grow overflow-y-auto mt-8 hidescroll">
           <div className="grid grid-cols-3 gap-5">
             {data?.usersLinks?.map((item) => (
               <div
@@ -215,7 +216,10 @@ const Index = () => {
             <p className="text-lg mt-5">UPI Id:</p>
             <p className="mt-1 ml-3">{showUpi?.link}</p>
             <p
-              onClick={() => window.navigator.clipboard.writeText(showUpi?.link || "")}
+              onClick={() => {
+                window.navigator.clipboard.writeText(showUpi?.link || "");
+                toast.success("UPI ID Copied");
+              }}
               className="h-11 bg-gradient-to-r from-darkblue to-mediumblue mt-7 rounded-full flex items-center justify-center text-white cursor-pointer"
             >
               COPY UPI ID

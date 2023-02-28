@@ -27,3 +27,9 @@
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #0d82ff;
 }
+.Toastify__toast {
+  min-height: 0px !important;
+  width: fit-content !important;
+  margin: 0 auto !important;
+  padding: 5px 15px !important;
+}

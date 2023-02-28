@@ -22,7 +22,7 @@ const Index = () => {
               ") your information when you use our services ("
               <span className="font-bold">Services</span>"), such as when you:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>
                 Visit our website at{" "}
                 <Link to="/" className="text-mediumblue break-words">
@@ -37,7 +37,7 @@ const Index = () => {
               <li>
                 Engage with us in other related ways, including any sales, marketing, or events
               </li>
-            </div>
+            </ul>
             <p className="text-gray-500">
               <span className="font-bold">Questions or concerns?</span> Reading this privacy notice
               will help you understand your privacy rights and choices. If you do not agree with our
@@ -137,12 +137,12 @@ const Index = () => {
               the Services, the choices you make, and the products and features you use. The
               personal information we collect may include the following:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>Names</li>
               <li className="mt-3">Phone Numbers</li>
               <li className="mt-3">Usernames</li>
               <li className="mt-3">Email Addresses</li>
-            </div>
+            </ul>
             <p>
               <span className="font-bold">Sensitive Information. </span>We do not process sensitive
               information.
@@ -158,7 +158,7 @@ const Index = () => {
               also may collect the following information if you choose to provide us with access or
               permission:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>
                 <span className="italic">Geolocation Information. </span>We may request access or
                 permission to track location-based information from your mobile device, either
@@ -178,7 +178,7 @@ const Index = () => {
                 you wish to opt out from receiving these types of communications, you may turn them
                 off in your device's settings.
               </li>
-            </div>
+            </ul>
             <p>
               This information is primarily needed to maintain the security and operation of our
               application(s), for troubleshooting, and for our internal analytics and reporting
@@ -195,7 +195,7 @@ const Index = () => {
               We process your personal information for a variety of reasons, depending on how you
               interact with our Services, including:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>
                 <span className="font-bold">
                   To facilitate account creation and authentication and otherwise manage user
@@ -269,7 +269,7 @@ const Index = () => {
                 We may process your information to comply with our legal obligations, respond to
                 legal requests, and exercise, establish, or defend our legal rights.
               </li>
-            </div>
+            </ul>
             <p className="font-extrabold mt-12">
               3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
             </p>
@@ -280,7 +280,7 @@ const Index = () => {
             <p className="mt-5">
               We may need to share your personal information in the following situations:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>
                 <span className="font-bold">Business Transfers. </span>
                 We may share or transfer your information in connection with, or during negotiations
@@ -295,7 +295,7 @@ const Index = () => {
                 able to view descriptions of your activity, communicate with you within our
                 Services, and view your profile.
               </li>
-            </div>
+            </ul>
             <p className="font-extrabold mt-12">4. WHAT IS OUR STANCE ON THIRD-PARTY WEBSITES?</p>
             <p className="italic mt-5">
               <span className="font-bold text-gray-500">In Short: </span>We are not responsible for
@@ -634,22 +634,22 @@ const Index = () => {
               We will use and retain the collected personal information as needed to provide the
               Services or for:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>Category G - As long as the user has an account with us</li>
               <li>Category K - As long as the user has an account with us</li>
-            </div>
+            </ul>
             <p>
               We may also collect other personal information outside of these categories through
               instances where you interact with us in person, online, or by phone or mail in the
               context of:
             </p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>Receiving help through our customer support channels;</li>
               <li>Participation in customer surveys or contests; and</li>
               <li>
                 Facilitation in the delivery of our Services and to respond to your inquiries.
               </li>
-            </div>
+            </ul>
             <p className="font-bold">How do we use and share your personal information?</p>
             <p className="mt-5">
               More information about our data collection and sharing practices can be found in this
@@ -706,7 +706,7 @@ const Index = () => {
             </p>
             <p className="mt-5 underline">Right to be informed — Request to know</p>
             <p className="mt-5">Depending on the circumstances, you have a right to know:</p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>whether we collect and use your personal information;</li>
               <li className="mt-3">the categories of personal information that we collect;</li>
               <li className="mt-3">
@@ -730,7 +730,7 @@ const Index = () => {
               <li className="mt-3">
                 the specific pieces of personal information we collected about you.
               </li>
-            </div>
+            </ul>
             <p>
               In accordance with applicable law, we are not obligated to provide or delete consumer
               information that is de-identified in response to a consumer request or to re-identify
@@ -768,7 +768,7 @@ const Index = () => {
               additionally provided information as soon as we finish verifying you.
             </p>
             <p className="mt-5 underline text-base">Other privacy rights</p>
-            <div className="my-10">
+            <ul className="my-10 list-outside list-disc ml-5">
               <li>You may object to the processing of your personal information.</li>
               <li className="mt-3">
                 You may request correction of your personal data if it is incorrect or no longer
@@ -786,7 +786,7 @@ const Index = () => {
                 the request as soon as feasibly possible, but no later than fifteen (15) days from
                 the date of the request submission.
               </li>
-            </div>
+            </ul>
             <p>
               To exercise these rights, you can contact us by email at{" "}
               <a

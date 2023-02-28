@@ -1,8 +1,9 @@
 // Main import
 import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer, Flip } from "react-toastify";
 import LazyLoading from "./components/LazyLoading";
-import Watcher from "./components/Watcher";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 const Home = lazy(() => import("./pages/home/Index"));
@@ -19,7 +20,19 @@ const NotFound = lazy(() => import("./pages/404/Index"));
 const App = () => {
   return (
     <>
-      <Watcher />
+      <ScrollToTop />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        theme="colored"
+        limit={3}
+        transition={Flip}
+        closeButton={false}
+        className="text-sm font-semibold"
+      />
+
+      {/* Routes */}
       <Routes>
         {/* Home */}
         <Route
