@@ -95,7 +95,7 @@ const Footer = () => {
                 <AiTwotoneMail className="text-xl mt-0.5 md:mt-1" />
                 <div>
                   <p className="md:text-lg font-semibold text-white">Email</p>
-                  <p className="text-sm md:text-base font-medium">info@solkrd.com</p>
+                  <p className="text-sm md:text-base font-medium">contactsolkrd001@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 mt-4 text-gray-300">

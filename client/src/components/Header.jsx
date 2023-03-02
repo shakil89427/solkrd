@@ -7,7 +7,7 @@ const Header = () => {
   const navigateItems = useRef([
     { title: "Shop", to: "/" },
     { title: "Download", to: "/download" },
-    { title: "Support", to: "/" },
+    { title: "Support", to: "/contact" },
   ]);
 
   return (
