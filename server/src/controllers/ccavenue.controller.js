@@ -1,34 +1,36 @@
 const admin = require("../firebase/admin");
-const ccavenue = require("ccavenue");
+const crypto = require("crypto");
+const nodeCCAvenue = require("node-ccavenue");
 const ccavenueValidator = require("../validators/ccavenue.validator");
+
+const ccavenue = new nodeCCAvenue.Configure({
+  merchant_id: process.env.CCAVENUE_MERCENT_ID,
+  working_key: process.env.CCAVENUE_WORKING_KEY,
+});
 
 module.exports.create = async (req, res, next) => {
   try {
-    const { orderId, amount, userId, username } = await ccavenueValidator.create.validateAsync(
-      req.query
-    );
-    ccavenue.setMerchant(process.env.CCAVENUE_MERCENT_ID);
-    ccavenue.setWorkingKey(process.env.CCAVENUE_WORKING_KEY);
-    ccavenue.setOrderId(orderId);
-    ccavenue.setRedirectUrl("https://solkrd.com/api/ccavenue");
-    ccavenue.setOrderAmount(amount);
-    ccavenue.setOtherParams({ userId, username });
-    ccavenue.makePayment(res);
+    const { amount, currency, username } = await ccavenueValidator.create.validateAsync(req.query);
+    const encryptedOrderData = ccavenue.getEncryptedOrder({
+      order_id: crypto.randomBytes(32).toString("hex"),
+      currency,
+      amount,
+      redirect_url: encodeURIComponent("https://solkrd.com/api/ccavenue"),
+      billing_name: username,
+    });
+    res.send({ encryptedOrderData });
   } catch (error) {
-    if (error.isJoi) {
-      res.status(403).send("Not allowed");
-    } else {
-      next(error);
-    }
+    if (error.isJoi) error.status = 422;
+    next(error);
   }
 };
 
 module.exports.verify = async (req, res, next) => {
   try {
-    const data = ccavenue.paymentRedirect(req);
-    await admin.firestore().collection("testpayment").add(data);
+    const decryptedData = ccavenue.decrypt(req.body.encResp);
+    await admin.firestore().collection("testpayment").add(decryptedData);
     res.end();
   } catch (error) {
-    next(error);
+    res.end();
   }
 };
