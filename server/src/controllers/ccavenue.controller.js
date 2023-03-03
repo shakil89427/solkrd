@@ -1,5 +1,4 @@
 const admin = require("../firebase/admin");
-const crypto = require("crypto");
 const nodeCCAvenue = require("node-ccavenue");
 const ccavenueValidator = require("../validators/ccavenue.validator");
 
@@ -12,7 +11,7 @@ module.exports.create = async (req, res, next) => {
   try {
     const { amount, currency, username } = await ccavenueValidator.create.validateAsync(req.query);
     const encryptedOrderData = ccavenue.getEncryptedOrder({
-      order_id: crypto.randomBytes(32).toString("hex"),
+      order_id: Math.round(Math.random() * 9000000000 + 1000000000).toString(),
       currency,
       amount,
       redirect_url: encodeURIComponent("https://solkrd.com/api/ccavenue"),
@@ -29,7 +28,7 @@ module.exports.create = async (req, res, next) => {
 
 module.exports.verify = async (req, res, next) => {
   try {
-    const decryptedData = ccavenue.decrypt(req.body.encResp);
+    const decryptedData = ccavenue.redirectResponseToJson(req.body.encResp);
     await admin.firestore().collection("testpayment").add(decryptedData);
     res.end();
   } catch (error) {
