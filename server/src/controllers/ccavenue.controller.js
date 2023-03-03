@@ -18,7 +18,9 @@ module.exports.create = async (req, res, next) => {
       redirect_url: encodeURIComponent("https://solkrd.com/api/ccavenue"),
       billing_name: username,
     });
-    res.send({ encryptedOrderData });
+    const finalForm = `<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="${encryptedOrderData}"><input type="hidden" name="access_code" id="access_code" value="${process.env.CCAVENUE_ACCESS_CODE}"><script language="javascript">document.redirect.submit();</script></form>`;
+    res.set({ "Content-Type": "text/html" });
+    res.send(finalForm);
   } catch (error) {
     if (error.isJoi) error.status = 422;
     next(error);
