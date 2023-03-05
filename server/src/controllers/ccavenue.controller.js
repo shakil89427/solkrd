@@ -1,10 +1,38 @@
 const admin = require("../firebase/admin");
 const nodeCCAvenue = require("node-ccavenue");
+const ccAvenueValidator = require("../validators/ccAvenue.validator");
 
 const ccav = new nodeCCAvenue.Configure({
   merchant_id: process.env.CCAVENUE_MERCHANT_ID,
   working_key: process.env.CCAVENUE_WORKING_KEY,
 });
+
+module.exports.create = async (req, res, next) => {
+  try {
+    const result = await ccAvenueValidator.create.validateAsync(req.body);
+    const encKey = ccav.getEncryptedOrder({
+      order_id: result.orderId,
+      billing_tel: result.phoneNumber,
+      amount: result.amount,
+      currency: result.currency,
+      billing_email: result.email,
+      merchant_param1: result.userId,
+      merchant_param2: result.attachmentCounts,
+      billing_name: result.name,
+      billing_address: result.address,
+      billing_country: result.country,
+      billing_city: result.city,
+      billing_state: result.state,
+      billing_zip: result.zip,
+      merchant_id: process.env.CCAVENUE_MERCHANT_ID,
+      redirect_url: "https://solkrd.com/api/ccavenue/success",
+      cancel_url: "https://solkrd.com/api/ccavenue/cancel",
+    });
+    res.send({ encKey, accessCode: process.env.CCAVENUE_ACCESS_CODE });
+  } catch (error) {
+    res.status(422).send("Unprocessable entries");
+  }
+};
 
 module.exports.success = async (req, res, next) => {
   try {
