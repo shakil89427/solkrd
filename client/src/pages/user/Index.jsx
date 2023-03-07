@@ -301,7 +301,7 @@ const Index = () => {
               className="absolute left-4 text-3xl cursor-pointer"
               onClick={() => setShowAttachment({})}
             />
-            <p className="text-xl font-bold">Attachment</p>
+            <p className="text-xl font-bold">Product</p>
           </div>
           {Array.isArray(showAttachment?.blob) && showAttachment?.blob?.length > 0 && (
             <Swiper
