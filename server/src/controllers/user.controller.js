@@ -22,8 +22,16 @@ module.exports.getUser = async (req, res, next) => {
       .where("active", "==", true)
       .orderBy("creationDate", "desc")
       .get();
-    const usersLinks = response2.docs.map((item) => item.data());
-    res.send({ ...user, usersLinks });
+    const { links, attachments } = response2.docs.reduce(
+      (previous, current) => {
+        const currentData = current.data();
+        return currentData?.type?.toLowerCase() === "attachment"
+          ? { links: previous.links, attachments: [...previous.attachments, currentData] }
+          : { links: [...previous.links, currentData], attachments: previous.attachments };
+      },
+      { links: [], attachments: [] }
+    );
+    res.send({ ...user, links, attachments });
   } catch (error) {
     if (error.isJoi) error.status = 422;
     next(error);
