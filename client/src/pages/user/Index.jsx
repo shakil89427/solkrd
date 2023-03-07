@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useGetUser from "../../hooks/queries/useGetUser";
 import logorect from "../../assets/images/logorect.png";
+import productlogo from "../../assets/images/productlogo.png";
 import Loading from "../../components/Loading";
 import useUpdateUsersLinks from "../../hooks/mutations/useUpdateUsersLinks";
 import useAddUsersContacts from "../../hooks/mutations/useAddUsersContacts";
@@ -17,6 +18,7 @@ const Index = () => {
   const { userId } = useParams();
   const [showContact, setShowContact] = useState(false);
   const [showUpi, setShowUpi] = useState({});
+  const [showAttachments, setShowAttachments] = useState(false);
   const [showAttachment, setShowAttachment] = useState({});
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,26 +34,26 @@ const Index = () => {
     setMessage
   );
 
-  const handleClick = async (item) => {
-    if (item?.type === "address") {
+  const handleLink = async (item) => {
+    if (item?.type?.toLowerCase() === "address") {
       window.open(`https://maps.google.com/?q=${item?.link}`);
     }
-    if (item?.type === "upi") {
+    if (item?.type?.toLowerCase() === "upi") {
       setShowUpi(item);
     }
-    if (item?.type === "attachment") {
+    if (item?.type?.toLowerCase() === "attachment") {
       setShowAttachment(item);
     }
-    if (item?.type === "link") {
+    if (item?.type?.toLowerCase() === "link") {
       window.open(item?.link);
     }
-    if (item?.type === "number" && item?.link?.includes("http")) {
+    if (item?.type?.toLowerCase() === "number" && item?.link?.includes("http")) {
       window.open(item?.link);
     }
-    if (item?.type === "number" && !item?.link?.includes("http")) {
+    if (item?.type?.toLowerCase() === "number" && !item?.link?.includes("http")) {
       window.open(`tel:${item?.link}`);
     }
-    if (item?.type === "email") {
+    if (item?.type?.toLowerCase() === "email") {
       window.open(`mailto:${item?.link}`);
     }
     updateUsersLinks.mutate({ userId, linkId: item?.linkId });
@@ -100,36 +102,55 @@ const Index = () => {
             Contact
           </button>
         </div>
-        {/* Links */}
         <div className="px-5 pb-5 grow overflow-y-auto mt-8 hidescroll">
           <div className="grid grid-cols-3 gap-5">
-            {data?.usersLinks?.map((item) => (
+            {/* Product */}
+            {Array.isArray(data?.attachments) && data?.attachments?.length > 0 && (
               <div
-                key={item?.linkId}
-                onClick={() => handleClick(item)}
-                className="bg-lightblue/5 p-5 pb-2 rounded-lg shadow hover:scale-105 duration-150 cursor-pointer select-none"
+                onClick={() => setShowAttachments(true)}
+                className="bg-lightblue/5 p-5 pb-2 rounded-lg shadow hover:scale-105 duration-200 cursor-pointer select-none"
               >
                 <img
                   className="w-full aspect-square object-cover object-center rounded-xl"
-                  src={item?.imageUrl}
+                  src={productlogo}
                   alt=""
                   loading="lazy"
                 />
-                <p className="text-sm text-center font-medium mt-2 text-gray-600">{item?.name}</p>
+                <p className="text-sm text-center font-medium mt-2 text-gray-600">Products</p>
               </div>
-            ))}
+            )}
+
+            {/* Links */}
+            {Array.isArray(data?.links) &&
+              data?.links?.length > 0 &&
+              data?.links?.map((item) => (
+                <div
+                  key={item?.linkId}
+                  onClick={() => handleLink(item)}
+                  className="bg-lightblue/5 p-5 pb-2 rounded-lg shadow hover:scale-105 duration-150 cursor-pointer select-none"
+                >
+                  <img
+                    className="w-full aspect-square object-cover object-center rounded-xl"
+                    src={item?.imageUrl}
+                    alt=""
+                    loading="lazy"
+                  />
+                  <p className="text-sm text-center font-medium mt-2 text-gray-600">{item?.name}</p>
+                </div>
+              ))}
           </div>
         </div>
+
+        {/* Contact form */}
         {showContact && (
           <div className="absolute inset-0 bg-black/50" onClick={() => setShowContact(false)} />
         )}
-        {/* Contact */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
             addUsersContacts.mutate({ userId, name, email, phone, message });
           }}
-          className={`absolute left-0 bottom-0 p-5 bg-white grid grid-cols-1 gap-5 w-full duration-200 rounded-xl ${
+          className={`absolute left-0 bottom-0 p-5 bg-white grid grid-cols-1 gap-5 w-full duration-200 rounded-xl overflow-y-auto max-h-[90%] hidescroll ${
             showContact ? "translate-y-0" : "translate-y-full"
           }`}
         >
@@ -196,21 +217,22 @@ const Index = () => {
             {addUsersContacts.isLoading ? <Loading size={20} color="#fff" /> : <span>Submit</span>}
           </button>
         </form>
-        {/* Upi */}
+
+        {/* Upi details */}
         <div
-          className={`absolute inset-0 duration-200 rounded-xl bg-white ${
+          className={`absolute inset-0 duration-200 rounded-xl bg-white flex flex-col items-center justify-start ${
             showUpi?.type ? "translate-y-0" : "translate-y-full"
           }`}
         >
-          <div className="h-16 flex items-center justify-center bg-mediumblue text-white">
+          <div className="h-16 flex items-center justify-center bg-mediumblue text-white w-full shrink-0">
             <BsArrowLeft
               className="absolute left-4 text-3xl cursor-pointer"
               onClick={() => setShowUpi({})}
             />
             <p className="text-xl font-bold">UPI</p>
           </div>
-          <img src={showUpi?.imageUrl} alt="" className="w-20 aspect-square block mx-auto mt-5" />
-          <div className="p-5 text-black/80 font-bold">
+          <img src={showUpi?.imageUrl} alt="" className="w-20 aspect-square shrink-0 mt-5" />
+          <div className="text-black/80 font-bold mt-5 p-5 pt-0 grow overflow-y-auto hidescroll w-full">
             <p className="text-lg">Title:</p>
             <p className="mt-1 ml-3">{showUpi?.name}</p>
             <p className="text-lg mt-5">UPI Id:</p>
@@ -226,13 +248,55 @@ const Index = () => {
             </p>
           </div>
         </div>
-        {/* Attachment */}
+
+        {/* All Attachments */}
         <div
-          className={`absolute inset-0 duration-200 rounded-xl bg-white ${
+          className={`absolute inset-0 duration-200 rounded-xl bg-white flex flex-col items-center justify-start ${
+            showAttachments ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
+          <div className="h-16 flex items-center justify-center bg-mediumblue text-white w-full shrink-0">
+            <BsArrowLeft
+              className="absolute left-4 text-3xl cursor-pointer"
+              onClick={() => setShowAttachments(false)}
+            />
+            <p className="text-xl font-bold">Products</p>
+          </div>
+          <div className="p-5 grow overflow-y-auto hidescroll w-full">
+            <div className="grid grid-cols-1 gap-5">
+              {Array.isArray(data?.attachments) &&
+                data?.attachments?.length > 0 &&
+                data?.attachments?.map((item) => (
+                  <div
+                    key={item?.linkId}
+                    onClick={() => handleLink(item)}
+                    className="bg-lightblue/5 p-5 rounded-lg hover:scale-[101%] duration-200 cursor-pointer select-none flex items-center justify-center hover:bg-lightblue/20"
+                  >
+                    <img
+                      className="w-12 aspect-square object-cover object-center rounded-md shrink-0"
+                      src={item?.imageUrl}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div className="ml-5 grow">
+                      <p className="font-bold text-black/80 line-clamp-1">{item?.name}</p>
+                      <p className="text-sm font-medium text-gray-600 line-clamp-1">
+                        {item?.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Attachment details */}
+        <div
+          className={`absolute inset-0 duration-200 rounded-xl bg-white flex flex-col items-center justify-start ${
             showAttachment?.type ? "translate-y-0" : "translate-y-full"
           }`}
         >
-          <div className="h-16 flex items-center justify-center bg-mediumblue text-white">
+          <div className="h-16 flex items-center justify-center bg-mediumblue text-white w-full shrink-0">
             <BsArrowLeft
               className="absolute left-4 text-3xl cursor-pointer"
               onClick={() => setShowAttachment({})}
@@ -243,7 +307,7 @@ const Index = () => {
             <Swiper
               pagination={true}
               modules={[Pagination]}
-              className="bg-black aspect-video w-full"
+              className="bg-black aspect-video w-full shrink-0"
             >
               {showAttachment.blob.map((url) => (
                 <SwiperSlide key={url}>
@@ -258,7 +322,7 @@ const Index = () => {
               ))}
             </Swiper>
           )}
-          <div className="p-5">
+          <div className="grow w-full overflow-y-auto hidescroll p-5">
             <p className="text-lg text-gray-500 font-bold">Title:</p>
             <p className="mt-1">{showAttachment?.name}</p>
             <p className="text-lg mt-5 text-gray-500 font-bold">Description</p>
